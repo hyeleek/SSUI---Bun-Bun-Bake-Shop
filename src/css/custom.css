@@ -1,0 +1,77 @@
+
+html, #all {
+	height: 100%;
+	/*setting global variables */
+	--white: #F5F5F5;
+	--grey: #7B7B7B;
+	--dark: #3E3E3D;
+	--coral: #E0604B;
+	--pink: #ED3847;
+}
+body {
+	width: 100%;
+	height: 100%;
+	font-weight: 300;
+	background-color: white;
+	margin-top: -4px;
+	display: flex;
+	flex-direction: column;
+}
+header {
+	z-index: 1000;
+	position: fixed;
+    right: 0;
+    left: 0;
+    height : 80px;
+    padding-top : 10px;
+  	box-shadow : 0px 0px 5px 0px rgba(0,0,0,0.3);
+  	display: flex;
+  	flex-direction: row;
+  	justify-content: space-around;
+}
+.nav-item{
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height : 100%;
+}
+
+.nav-item:hover{
+  color: var(--pink);
+}
+.nav-item > img{
+	width : 50px;
+	height : 50px;
+	padding : 10px;
+  	align-self: center;
+}
+.nav-item > .nav-text{
+	color : var(--dark);
+	font-family: "Roboto";
+	font-weight: 400;
+	align-self: center;
+	text-decoration:none;
+}
+.nav-item > .nav-text:hover{
+	color : var(--pink);
+}
+.nav-item > .active{
+	color : var(--pink);
+	font-weight: 700;
+}
+.nav-item > .home{
+	color : var(--dark);
+	font-weight: 400;
+}
+
+
+.content {
+	padding-top: 100px;
+	align-content: center;
+	justify-content: center;
+	padding: 100px 20px;
+}
