@@ -12,4 +12,5 @@ This is part of the assignment of Programming Usable Interface course from HCII,
 
 After 3 iterations of paper prototyping, this is a high-fidelity clickable prototype designed in Adobe XD and prototyped in inVision.
 
-Interactive Prototype can be tested [here](hailey455812.invisionapp.com/public/share/BZWTRZ3VX).
+Interactive Prototype can be tested [here](https://hailey455812.invisionapp.com/public/share/BZWTRZ3VX).
+Screen recording of the interactive prototype can be viewed [here](https://vimeo.com/361695190).
