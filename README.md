@@ -1,4 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The result of this project [Bun Bun Bake Shop](https://hyeleek.github.io/SSUI---Bun-Bun-Bake-Shop) can be found here.
+
+This is part of the assignment of Programming Usable Interface course from HCII, Carnegie Mellon University.
+
+After 3 iterations of paper prototyping, this is a high-fidelity clickable prototype designed in Adobe XD and prototyped in inVision.
+
+Prototype can be tested here : hailey455812.invisionapp.com/public/share/BZWTRZ3VX
 
 ## Available Scripts
 
