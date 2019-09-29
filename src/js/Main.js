@@ -10,6 +10,7 @@ import Order from "./Order";
 import Products from "./Products";
 import Contact from "./Contact";
 import Cart from "./Cart";
+import Detail from "./ProductDetail"
 
 import '../css/custom.css'
 import Logo from "../assets/icon.png";
@@ -45,12 +46,13 @@ class Main extends Component {
 
 
         <div className="content">
-          <Route exact path="/" component={Home}/>
-          <Route path="/About" component={About}/>
-          <Route path="/Order" component={Order}/>
-          <Route path="/Products" component={Products}/>
-          <Route path="/Contact" component={Contact}/>
-          <Route path="/Cart" component={Cart}/>
+            <Route exact path="/" component={Home}/>
+            <Route path="/About" component={About}/>
+            <Route path="/Order" component={Order}/>
+            <Route path="/Products" component={Products}/>
+            <Route path="/Contact" component={Contact}/>
+            <Route path="/Cart" component={Cart}/>
+            <Route path="/Detail" component={Detail}/>
         </div>
       </HashRouter>
     );
