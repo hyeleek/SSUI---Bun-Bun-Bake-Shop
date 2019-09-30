@@ -1,16 +1,15 @@
 import React, { Component } from "react";
 import Bun from "./Bun";
 
+var buns = [ "original","gluten free", "blackberry", "pecan", "pumpkin", "walnut"]
+
 class Products extends Component {
   render() {
     return (
       <div className="product-container">
-        <Bun title={"original"}/>
-        <Bun title={"blackberry"}/>
-        <Bun title={"walnut"}/>
-        <Bun title={"gluten free"}/>
-        <Bun title={"pecan"}/>
-        <Bun title={"pumpkin"}/>
+        {buns.map(bun => (
+          <Bun title={bun}/>
+        ))}
       </div>
     );
   }

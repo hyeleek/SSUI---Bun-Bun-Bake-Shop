@@ -19,7 +19,6 @@ class Main extends Component {
   render() {
     return (
       <HashRouter>
-
         <header>
                 <div className="nav-item">
                   <img src={Logo}/>
@@ -43,8 +42,6 @@ class Main extends Component {
                   <NavLink to="/Cart" className="nav-text">Cart</NavLink>
                 </div>
             </header>
-
-
         <div className="content">
             <Route exact path="/" component={Home}/>
             <Route path="/About" component={About}/>
