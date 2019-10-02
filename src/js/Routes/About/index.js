@@ -1,5 +1,7 @@
 import React, { Component } from "react";
- 
+
+import OrderChoice from "../../Components/OrderChoice";
+
 class About extends Component {
   render() {
     return (
@@ -9,5 +11,5 @@ class About extends Component {
     );
   }
 }
- 
+
 export default About;

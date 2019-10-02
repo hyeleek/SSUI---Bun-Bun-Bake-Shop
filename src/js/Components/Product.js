@@ -2,12 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-import original from "../assets/cinnamon.png";
-import gf from "../assets/cinnamon.png";
-import blackberry from "../assets/cinamon_blackberry.png";
-import pecan from "../assets/cinamon_pecan.png";
-import pumpkin from "../assets/cinnamon_pumpkin.png";
-import walnut from "../assets/cinnamon_walnut.png";
+import original from "../../assets/cinnamon.png";
+import gf from "../../assets/cinnamon.png";
+import blackberry from "../../assets/cinamon_blackberry.png";
+import pecan from "../../assets/cinamon_pecan.png";
+import pumpkin from "../../assets/cinnamon_pumpkin.png";
+import walnut from "../../assets/cinnamon_walnut.png";
 
 var dict = {
   "original": [original, "Original"],

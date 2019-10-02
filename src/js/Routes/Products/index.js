@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Bun from "./Bun";
+import Bun from "../../Components/Product";
 
 var buns = [ "original","gluten free", "blackberry", "pecan", "pumpkin", "walnut"]
 

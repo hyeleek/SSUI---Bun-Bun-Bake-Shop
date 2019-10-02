@@ -4,13 +4,14 @@ import {
   NavLink,
   HashRouter
 } from "react-router-dom";
-import Home from "./Home";
-import About from "./About";
-import Order from "./Order";
-import Products from "./Products";
-import Contact from "./Contact";
-import Cart from "./Cart";
-import Detail from "./ProductDetail"
+
+import Home from "./Routes/Home";
+import About from "./Routes/About";
+import Order from "./Routes/Order";
+import Products from "./Routes/Products";
+import Contact from "./Routes/Contact";
+import Cart from "./Routes/Cart";
+import Detail from "./Routes/ProductDetail"
 
 import '../css/custom.css'
 import Logo from "../assets/icon.png";

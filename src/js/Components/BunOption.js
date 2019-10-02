@@ -20,13 +20,13 @@ class BunOption extends Component {
   }
   render(){
     const { option } = this.state;
-    const { imgSrc, title, price, click } = this.props;
+    const { imgSrc, title, name, price, add, open, close } = this.props;
     return (
       <div className="bun-option">
           <img src={imgSrc}/>
-          <button id="view"> Quick View </button>
+          <button id="view" onClick={()=>open(name)}> Quick View </button>
           <p>{title}</p>
-          <p>{`$ ${price.toFixed(2)}`}</p>
+          <p>{`$ ${(price*nums[option]).toFixed(2)}`}</p>
           <div id={"buttons"}>
             <div id={"num-buttons"}>
               {nums.map( (num, index)  => (
@@ -36,7 +36,7 @@ class BunOption extends Component {
                 > {num} </button>
               ))}
             </div>
-            <button id="add">  Add </button>
+            <button id="add" onClick={()=>add(nums[option], name)}>  Add </button>
           </div>
 
       </div>
@@ -47,8 +47,11 @@ class BunOption extends Component {
 BunOption.propTypes = {
   imgSrc: PropTypes.object.isRequired,
   title : PropTypes.string.isRequired,
+  name : PropTypes.string.isRequired,
   price : PropTypes.number.isRequired,
-  click : PropTypes.func
+  add : PropTypes.func.isRequired,
+  open : PropTypes.func.isRequired,
+  close : PropTypes.func.isRequired
 };
 
 export default BunOption;
