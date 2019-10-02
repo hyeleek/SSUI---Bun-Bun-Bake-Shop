@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/SSUI---Bun-Bun-Bake-Shop/static/css/main.9a9a1761.chunk.css",
-    "main.js": "/SSUI---Bun-Bun-Bake-Shop/static/js/main.78e78d19.chunk.js",
-    "main.js.map": "/SSUI---Bun-Bun-Bake-Shop/static/js/main.78e78d19.chunk.js.map",
+    "main.css": "/SSUI---Bun-Bun-Bake-Shop/static/css/main.25461b15.chunk.css",
+    "main.js": "/SSUI---Bun-Bun-Bake-Shop/static/js/main.5184edf3.chunk.js",
+    "main.js.map": "/SSUI---Bun-Bun-Bake-Shop/static/js/main.5184edf3.chunk.js.map",
     "runtime-main.js": "/SSUI---Bun-Bun-Bake-Shop/static/js/runtime-main.95658096.js",
     "runtime-main.js.map": "/SSUI---Bun-Bun-Bake-Shop/static/js/runtime-main.95658096.js.map",
-    "static/js/2.2b1e51c8.chunk.js": "/SSUI---Bun-Bun-Bake-Shop/static/js/2.2b1e51c8.chunk.js",
-    "static/js/2.2b1e51c8.chunk.js.map": "/SSUI---Bun-Bun-Bake-Shop/static/js/2.2b1e51c8.chunk.js.map",
+    "static/js/2.d4fe38c0.chunk.js": "/SSUI---Bun-Bun-Bake-Shop/static/js/2.d4fe38c0.chunk.js",
+    "static/js/2.d4fe38c0.chunk.js.map": "/SSUI---Bun-Bun-Bake-Shop/static/js/2.d4fe38c0.chunk.js.map",
     "index.html": "/SSUI---Bun-Bun-Bake-Shop/index.html",
-    "precache-manifest.d9d7d60abe4a4ad5ffcbf2b35c9b6ce9.js": "/SSUI---Bun-Bun-Bake-Shop/precache-manifest.d9d7d60abe4a4ad5ffcbf2b35c9b6ce9.js",
+    "precache-manifest.0db67ecbec7f0a708deb01db9ac24dd8.js": "/SSUI---Bun-Bun-Bake-Shop/precache-manifest.0db67ecbec7f0a708deb01db9ac24dd8.js",
     "service-worker.js": "/SSUI---Bun-Bun-Bake-Shop/service-worker.js",
-    "static/css/main.9a9a1761.chunk.css.map": "/SSUI---Bun-Bun-Bake-Shop/static/css/main.9a9a1761.chunk.css.map",
+    "static/css/main.25461b15.chunk.css.map": "/SSUI---Bun-Bun-Bake-Shop/static/css/main.25461b15.chunk.css.map",
     "static/media/box1.png": "/SSUI---Bun-Bun-Bake-Shop/static/media/box1.bc01d391.png",
     "static/media/box2.png": "/SSUI---Bun-Bun-Bake-Shop/static/media/box2.15fb4831.png",
     "static/media/box3.png": "/SSUI---Bun-Bun-Bake-Shop/static/media/box3.6520483b.png",
@@ -20,6 +20,10 @@
     "static/media/cinnamon.png": "/SSUI---Bun-Bun-Bake-Shop/static/media/cinnamon.587afda8.png",
     "static/media/cinnamon_pumpkin.png": "/SSUI---Bun-Bun-Bake-Shop/static/media/cinnamon_pumpkin.c91cf039.png",
     "static/media/cinnamon_walnut.png": "/SSUI---Bun-Bun-Bake-Shop/static/media/cinnamon_walnut.f9048dba.png",
+    "static/media/glaze1.png": "/SSUI---Bun-Bun-Bake-Shop/static/media/glaze1.37baa3a9.png",
+    "static/media/glaze2.png": "/SSUI---Bun-Bun-Bake-Shop/static/media/glaze2.9a045e4a.png",
+    "static/media/glaze3.png": "/SSUI---Bun-Bun-Bake-Shop/static/media/glaze3.8e768f49.png",
+    "static/media/glaze4.png": "/SSUI---Bun-Bun-Bake-Shop/static/media/glaze4.1fd45f38.png",
     "static/media/home.png": "/SSUI---Bun-Bun-Bake-Shop/static/media/home.62d62799.png"
   }
 }

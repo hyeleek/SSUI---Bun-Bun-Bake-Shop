@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b14db86c068a9c1967d25b568685071b",
+    "revision": "1ead2c1a103f075a9c1ef1e8a25f94b5",
     "url": "/SSUI---Bun-Bun-Bake-Shop/index.html"
   },
   {
-    "revision": "ca7d8af2331539966476",
-    "url": "/SSUI---Bun-Bun-Bake-Shop/static/css/main.9a9a1761.chunk.css"
+    "revision": "667183dc7460c5fc73d1",
+    "url": "/SSUI---Bun-Bun-Bake-Shop/static/css/main.25461b15.chunk.css"
   },
   {
-    "revision": "83ce5cba9ae84632f3d4",
-    "url": "/SSUI---Bun-Bun-Bake-Shop/static/js/2.2b1e51c8.chunk.js"
+    "revision": "9ae9fbce7392dae79241",
+    "url": "/SSUI---Bun-Bun-Bake-Shop/static/js/2.d4fe38c0.chunk.js"
   },
   {
-    "revision": "ca7d8af2331539966476",
-    "url": "/SSUI---Bun-Bun-Bake-Shop/static/js/main.78e78d19.chunk.js"
+    "revision": "667183dc7460c5fc73d1",
+    "url": "/SSUI---Bun-Bun-Bake-Shop/static/js/main.5184edf3.chunk.js"
   },
   {
     "revision": "cd59b981aa8dc66c76ba",
@@ -54,6 +54,22 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f9048dba46e2416b97773589e8ed1d7f",
     "url": "/SSUI---Bun-Bun-Bake-Shop/static/media/cinnamon_walnut.f9048dba.png"
+  },
+  {
+    "revision": "37baa3a93e2cc8fbddd49c97058b2c16",
+    "url": "/SSUI---Bun-Bun-Bake-Shop/static/media/glaze1.37baa3a9.png"
+  },
+  {
+    "revision": "9a045e4a260f9129ca74de81b3159fc8",
+    "url": "/SSUI---Bun-Bun-Bake-Shop/static/media/glaze2.9a045e4a.png"
+  },
+  {
+    "revision": "8e768f49dd8dea3a9dff77f52c301bf1",
+    "url": "/SSUI---Bun-Bun-Bake-Shop/static/media/glaze3.8e768f49.png"
+  },
+  {
+    "revision": "1fd45f38e850353fed80a6c3bfba6c71",
+    "url": "/SSUI---Bun-Bun-Bake-Shop/static/media/glaze4.1fd45f38.png"
   },
   {
     "revision": "62d627997795a70161d84ea6e5f212d5",
