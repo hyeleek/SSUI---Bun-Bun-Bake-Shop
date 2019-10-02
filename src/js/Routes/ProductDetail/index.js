@@ -9,7 +9,7 @@ import pecan from "../../../assets/cinamon_pecan.png";
 import pumpkin from "../../../assets/cinnamon_pumpkin.png";
 import walnut from "../../../assets/cinnamon_walnut.png";
 
-var dict = {
+const dict = {
   "original": [original, "Original"],
   "gluten free": [gf, "Original Gluten Free"],
   "blackberry" : [blackberry, "Blackberry"],
@@ -21,17 +21,14 @@ var dict = {
 
 class Detail extends React.Component {
 
-  state ={
-    title : "original"
-  };
-
   constructor(props) {
     super(props);
-
-    this.state.title = this.props.location.title;
+    this.state = {
+      title : null
+    };
   };
 
-  componentDidMount() {
+  componentWillMount() {
     this.state.title = this.props.location.title;
   }
 

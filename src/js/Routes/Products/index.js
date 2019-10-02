@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Bun from "../../Components/Product";
 
-var buns = [ "original","gluten free", "blackberry", "pecan", "pumpkin", "walnut"]
+const buns = [ "original","gluten free", "blackberry", "pecan", "pumpkin", "walnut"]
 
 class Products extends Component {
   render() {

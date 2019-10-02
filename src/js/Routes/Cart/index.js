@@ -68,11 +68,11 @@ const Total = ({items}) => {
   return total.toFixed(2);
 }
 
-const Items = ({items}) => (
+const Items = ({items, click}) => (
   <div className="boxes-container">
-    {
-      items.map( (item, key) => (
+    { items.map( (item, key) => (
         <div className="box">
+          <div className="delete" onClick={()=>click(key)}> <p>x</p> </div>
           <div className="left">
             <img src={ boxes[item["box"]]["image"]}/>
             <p> Glaze : {glazes[item["glaze"]]} </p>
@@ -102,6 +102,7 @@ class Cart extends Component {
     this.state ={
       data : null
     };
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentWillMount(){
@@ -109,12 +110,28 @@ class Cart extends Component {
        data : JSON.parse(window.localStorage.getItem("test"))
      });
   }
+
+  handleDelete = index => {
+    const item = JSON.parse(window.localStorage.getItem("test"));
+    var modified = item.slice(0,index).concat(item.slice(index+1,item.length-1));
+
+    if ( modified.length === 0) {
+      window.localStorage.clear();
+    } else {
+      window.localStorage.setItem('test', JSON.stringify(modified));
+    }
+
+    this.setState({
+      data : JSON.parse(window.localStorage.getItem("test"))
+    });
+  };
+
   render() {
     const { data } = this.state;
     return (
       <div className="cart">
         <p id="title"> My Cart </p>
-        { data!==null ? <Items  items={data}/> : <p> Empty </p> }
+      { data!==null ? <Items  items={data} click={this.handleDelete}/> : <p> Empty </p> }
         { data!==null ?
           <p id="total"> TOTAL : $ {<Total items={data}/>}</p> :
           <p id="total"> TOTAL : $ 0.00 </p>
