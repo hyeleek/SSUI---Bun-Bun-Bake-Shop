@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/SSUI---Bun-Bun-Bake-Shop/precache-manifest.33c58d66fc83d98c5be5f146cfb206c0.js"
+  "/SSUI---Bun-Bun-Bake-Shop/precache-manifest.71d3f6bc9d463cf0dbb48a825c7b5c94.js"
 );
 
 self.addEventListener('message', (event) => {
