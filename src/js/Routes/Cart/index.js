@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 // import Images
 import box1 from "../../../assets/box1.png";
@@ -98,40 +100,57 @@ const Items = ({items, click}) => (
 );
 
 class Cart extends Component {
-  constuctor(){
+
+  constructor(props){
+    super(props);
     this.state ={
-      data : null
+      checkedout : false
     };
     this.handleDelete = this.handleDelete.bind(this);
+    this.checkout = this.checkout.bind(this);
   }
 
-  componentWillMount(){
-     this.setState({
-       data : JSON.parse(window.localStorage.getItem("test"))
-     });
-  }
-
-  handleDelete = index => {
-    const item = JSON.parse(window.localStorage.getItem("test"));
-    var modified = item.slice(0,index).concat(item.slice(index+1,item.length-1));
-
-    if ( modified.length === 0) {
-      window.localStorage.clear();
-    } else {
-      window.localStorage.setItem('test', JSON.stringify(modified));
-    }
-
+  checkout(){
+    const { data, updateCart } = this.props;
+    window.localStorage.clear();
     this.setState({
-      data : JSON.parse(window.localStorage.getItem("test"))
+      checkedout : true,
     });
+    updateCart();
+    window.alert('Thank you for ordering. Your order has been made successfully');
+  }
+
+  // Warning Message : https://gist.github.com/primaryobjects/aacf6fa49823afb2f6ff065790a5b402
+  handleDelete = index => {
+    const item = JSON.parse(window.localStorage.getItem("cart"));
+    const { data, updateCart } = this.props;
+    var modified = data.slice(0,index).concat(data.slice(index+1,data.length));
+
+    if ( window.confirm('Are you sure you wish to delete your box?')) {
+      if ( modified.length === 0) {
+        window.localStorage.clear();
+      } else {
+        window.localStorage.setItem('cart', JSON.stringify(modified));
+      }
+      updateCart();
+    } else {
+      return;
+    }
   };
 
   render() {
-    const { data } = this.state;
+    const { data, updateCart } = this.props;
+    const { checkedout } = this.state;
     return (
       <div className="cart">
         <p id="title"> My Cart </p>
-      { data!==null ? <Items  items={data} click={this.handleDelete}/> : <p> Empty </p> }
+        <div className="buttons">
+          <Link to="/Order" style={{ textDecoration: 'none'}}> CONTINUE SHOPPING </Link>
+          { data!==null &&
+            <Link onClick={this.checkout} style={{ textDecoration: 'none'}} id="order-button"> CHECKOUT </Link>
+          }
+        </div>
+        { data!==null && <Items  items={data} click={this.handleDelete}/> }
         { data!==null ?
           <p id="total"> TOTAL : $ {<Total items={data}/>}</p> :
           <p id="total"> TOTAL : $ 0.00 </p>
@@ -140,5 +159,10 @@ class Cart extends Component {
     );
   }
 }
+
+Cart.propTypes = {
+  data : PropTypes.array.isRequired,
+  updateCart : PropTypes.func.isRequired
+};
 
 export default Cart;

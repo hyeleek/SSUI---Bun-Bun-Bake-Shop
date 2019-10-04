@@ -1,5 +1,5 @@
 /*=====================
-OVERALL : Body, Header
+OVERALL DESIGN GUIDE: Body, Header
 =====================*/
 html, #all {
 	height: 100%;
@@ -81,7 +81,60 @@ header {
 	font-weight: 400;
 }
 
+.nav-item > .cart-indicator{
+  background-color: var(--pink);
+	font-weight: 400;
+  justify-content: center;
+  align-items: center;
+  margin : 10px;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  width : 24px;
+  height : 24px;
+  border-radius: 12px;
+}
 
+.nav-item > .cart-indicator >p{
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  color : white;
+  font-size: 12px;
+  font-weight: 300;
+  font-family: "Roboto";
+}
+
+/*=====================
+ABOUT
+=====================*/
+.about {
+  overflow: hidden;
+  align-items: center;
+  position: fixed;
+  top: 20%;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+  justify-content: center;
+  align-items: center;
+}
+
+.about > div {
+  background-color: var(--white);
+  position: fixed;
+  top: 40%;
+  left: 20%;
+  right: 20%;
+  bottom: 30%;
+  padding : 40px 40px;
+}
+.about > div  >p{
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 24pt;
+}
 
 /*=====================
 HOME
@@ -172,35 +225,43 @@ PRODUCTS
 }
 
 /*=====================
-PRODUCT Detail
+PRODUCT DETAIL
 =====================*/
-
+.product-detail{
+  display: flex;
+  flex-direction: column;
+  width : 100%;
+  padding-top: 50px;
+}
 .product-detail-container{
   display: flex;
   flex : 1;
-  justify-content: center;
-  height : 100%;
-  padding-top: 50px;
 }
-.product-detail-column{
-  width : 33.333%;
-  height : 100%;
-  justify-content: center;
-  align-content: center;
+.product-detail-buttons{
+  display: flex;
+  padding: 50px;
+  justify-content: space-between;
 }
-.product-detail-column > img{
-  width : 100%;
-  padding-bottom: 50px;
-}
-.product-detail-column > a{
-  align-self: flex-end;
+.product-detail-buttons> a{
   background-color: var(--dark);
   font-size: 12px;
   padding : 10px 15px;
   border-radius: 10px;
   box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.2);
   color: var(--white);
-  align-self: flex-end;
+  position: relative;
+  bottom: 0;
+}
+.product-detail-buttons> #order-button{
+  background-image: linear-gradient(to right, var(--coral) , var(--pink));
+}
+.product-detail-column{
+  flex : 1;
+  width : 33.333%;
+}
+.product-detail-column > img{
+  width : 100%;
+  padding-bottom: 50px;
 }
 .product-detail-column > p{
   text-align: left;
@@ -306,6 +367,7 @@ ORDER PAGE
 .bun4{
   width : 40px;
 }
+
 .buttons {
   margin: 20px 0px;
   display: flex;
@@ -337,6 +399,16 @@ ORDER PAGE
 .buttons > .increase {
   background-color: var(--pink);
   border-color: var(--pink);
+}
+.buttons > .increase:hover, .decrease:hover {
+  box-shadow : 0px 2px 5px 0px rgba(0,0,0,0.3);
+}
+.buttons > .disalbed {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+.buttons > .disalbed:hover {
+  box-shadow : none;
 }
 .steps {
   display: flex;
@@ -380,12 +452,31 @@ ORDER PAGE
   text-align: center;
 }
 
+
+.checkout {
+  justify-content: center;
+  align-items: center;
+}
+.checkout > p{
+  background: var(--pink);
+  font-size: 16px;
+  padding : 10px 15px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.2);
+  color: var(--white);
+  position: relative;
+  bottom: 0;
+  width : 80px;
+  text-align: center;
+}
+
 .options {
   width : 90%;
   margin-top: 10px;
   display: flex;
   flex-direction: row;
   align-self: center;
+  justify-content: center;
 }
 .box-option {
   position: relative;
@@ -448,7 +539,7 @@ ORDER PAGE
   font-size: 14px;
   border-radius: 10px;
   width : 70px;
-  height : 50px;
+  height : 40px;
   position: relative;
   top : -15%;
 }
@@ -591,6 +682,22 @@ CART PAGE
   align-items: center;
 }
 
+.cart > .buttons{
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.cart > .buttons > a{
+  background-color: var(--dark);
+  font-size: 12px;
+  padding : 10px 15px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.2);
+  color: var(--white);
+  position: relative;
+  bottom: 0;
+}
+
 .cart > #title {
   color : var(--pink);
   font-weight: 700;
@@ -671,4 +778,44 @@ CART PAGE
 .cart > .boxes-container > .box > .right > .info >.total{
   width : 20%;
   text-align: right;
+}
+
+
+/*=====================
+ABOUT
+=====================*/
+.contact {
+  overflow: hidden;
+  align-items: center;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.contact > .contact-info {
+  width : 50%;
+  height : 100%;
+}
+
+.contact > .image-container {
+  width : 50%;
+  height : 100%;
+  background: url("../assets/contact.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+.contact > .contact-info >p{
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.contact > .contact-info > .branch {
+  margin : 30px;
+}
+.contact > .contact-info > .branch > .location{
+  font-weight: 700;
 }

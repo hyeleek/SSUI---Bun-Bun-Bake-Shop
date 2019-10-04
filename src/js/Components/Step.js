@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const Step = ({ title, index, progress, click }) => (
+const Step = ({ title, index, progress, click, enabled }) => (
     <div
       className = {["step", index===progress? "step-current":null].join(' ')}
-      onClick={()=>click(index)}
+      onClick={ enabled? ()=>click(index):null}
     >
         { index < progress?<span>&#10003;</span> : null}
         <p> {title} </p>
@@ -16,7 +16,8 @@ Step.propTypes = {
   title: PropTypes.string.isRequired,
   index : PropTypes.number.isRequired,
   progress: PropTypes.number.isRequired,
-  click : PropTypes.func.isRequired
+  click : PropTypes.func.isRequired,
+  enabled : PropTypes.bool.isRequired
 };
 
 export default Step;

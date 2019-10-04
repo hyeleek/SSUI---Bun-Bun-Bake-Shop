@@ -83,13 +83,17 @@ class OrderChoice extends Component {
   }
 
   render(){
-    const { boxKey, items} = this.props;
+    const { boxKey, items, deleteFromBox } = this.props;
     return (
       <div className="order-choice">
         <img src={boxes[boxKey]["image"]} className="box"/>
         <div className={boxClassName(boxKey)}>
           { items.map( (bun, index) => (
-              <img className={[bunClassName(boxKey)].join(" ")} src={buns[bun]["image"]}/>
+              <img
+                className={[bunClassName(boxKey)].join(" ")}
+                src={buns[bun]["image"]}
+                onClick={()=>deleteFromBox(bun, index)}
+              />
             ))}
         </div>
       </div>
@@ -99,7 +103,8 @@ class OrderChoice extends Component {
 
 OrderChoice.propTypes = {
   boxKey: PropTypes.number.isRequired,
-  items : PropTypes.array.isRequired
+  items : PropTypes.array.isRequired,
+  deleteFromBox : PropTypes.func.isRequired
 };
 
 export default OrderChoice;

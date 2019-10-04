@@ -35,12 +35,13 @@ class Detail extends React.Component {
   render() {
     const { title } = this.state;
     return (
+      <div className="product-detail">
       <div className="product-detail-container">
 
         <div className="product-detail-column">
           <p className="title">{title==undefined ? dict["original"][1] : dict[title][1]}</p>
           <img src={title==undefined ? dict["original"][0] : dict[title][0]}/>
-          <Link to="/Products" style={{ textDecoration: 'none'}}> BACK </Link>
+
         </div>
 
         <div className="product-detail-column">
@@ -52,7 +53,7 @@ class Detail extends React.Component {
             <h3>Allergy Info</h3>
             <p>Contains wheat and milk ingredients.</p>
           </div>
-      </div>
+        </div>
         <div className="product-detail-column">
           <div className="section">
             <h3>Nutrition Facts</h3>
@@ -72,6 +73,11 @@ class Detail extends React.Component {
         </div>
 
       </div>
+      <div className="product-detail-buttons">
+        <Link to="/Products" style={{ textDecoration: 'none'}}> BACK </Link>
+        <Link to="/Order" style={{ textDecoration: 'none'}} id="order-button"> ORDER NOW </Link>
+      </div>
+    </div>
     );
   }
 }

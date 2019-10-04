@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { Redirect, withRouter } from 'react-router-dom';
 
 // import Components
 import Steps from "../../Components/Steps";
@@ -117,10 +119,10 @@ const bunsOnBox = (choices) => {
 }
 
 class Order extends Component {
-  constructor() {
-    super();
+  constructor(props){
+    super(props);
     this.state = {
-      stage: 0,
+      stage: this.props.added? 3 : 0,
       box : null,
       choices : {},
       glaze : "1",
@@ -137,6 +139,7 @@ class Order extends Component {
     this.openPopUp = this.openPopUp.bind(this);
     this.closePopUp = this.closePopUp.bind(this);
     this.handleCart = this.handleCart.bind(this);
+    this.deleteFromBox = this.deleteFromBox.bind(this);
   }
 
   handleClick(newIndex){
@@ -151,11 +154,14 @@ class Order extends Component {
       stage : value_limit(stage -1, 0, 3)
     });
   }
+
   increase() {
+    console.log("increase!");
     const { stage } = this.state;
     this.setState({
       stage : value_limit(stage + 1, 0, 3)
     });
+    console.log("to " + this.state.stage);
   }
 
   boxClick(newIndex){
@@ -183,7 +189,6 @@ class Order extends Component {
   addToBox(count, title){
     const {  box, choices, capacity } = this.state;
     if ( box === null){
-      // TODO : disable "next step" button when choices are not completed
       alert('Choose your box first!');
     }
     else {
@@ -204,6 +209,21 @@ class Order extends Component {
     }
   }
 
+  deleteFromBox(title, index){
+    const { choices, capacity } = this.state;
+    if ( window.confirm('Are you sure you wish to delete your '+ title + " bun?")) {
+      choices[title] = choices[title] - 1;
+      if ( choices[title] === 0 ) {
+        delete choices[title];
+      }
+      this.setState({
+        capacity : capacity + 1
+      });
+    } else {
+      return;
+    }
+
+  }
 
   glazeClick(newIndex){
     this.setState({
@@ -212,6 +232,7 @@ class Order extends Component {
   }
 
   handleCart = () => {
+    const { data, directBack } = this.props;
     const { box, choices, glaze } = this.state;
     var test = null;
     var newItem = {
@@ -220,43 +241,72 @@ class Order extends Component {
       "glaze" : glaze
     };
 
-    if (localStorage.getItem("test") === null) {
+    if (data === null) {
       test = [newItem];
     } else {
-      test = JSON.parse(window.localStorage.getItem("test"));
+      test = data;
       test.unshift(newItem);
     }
-    window.localStorage.setItem('test', JSON.stringify(test));
+    window.alert('Your item has been successfully added to your cart!');
+    window.localStorage.setItem('cart', JSON.stringify(test));
     this.increase();
+    directBack();
   };
+
+  refresh = () => {
+    const { startFresh } = this.props;
+    this.setState({
+      stage: 0,
+      box : null,
+      choices : {},
+      glaze : "1",
+      capacity : null,
+    });
+    startFresh();
+  }
 
 
   render() {
-    const { stage, box, choices, glaze, showPopup, popup } = this.state;
+    const { added, startFresh } = this.props;
+    const { stage, box, choices, glaze, showPopup, popup, capacity } = this.state;
     return (
       <div className="order">
-        <Steps titles= {steps.slice(0, -1)} stage={stage} click={this.handleClick}/>
-
+        <Steps
+          titles= {steps.slice(0, -1)}
+          stage={stage}
+          click={this.handleClick}
+          box={box}
+          capacity={capacity}
+        />
         <div className="viewer">
           { box === null?
-              <p> CHOOSE YOUR BOX SIZE </p>:
+              added ? <p> Your buns have been added to cart! </p> : <p> CHOOSE YOUR BOX SIZE </p>
+              :
               <OrderChoice
                 boxKey={box}
                 items={bunsOnBox(choices)}
+                deleteFromBox = {this.deleteFromBox}
               />
           }
         </div>
 
         <div className="buttons">
-          { stage > 0 ?
-              <button className="decrease" onClick= {this.decrease} > &#60;     {steps[stage-1]}</button>
-              : <button className="empty" > </button>
+          { (stage > 0 && stage<3) ?
+              <button className="decrease" onClick= {this.decrease} >
+                &#60; {steps[stage-1]}
+              </button>
+              : <button className="empty" disabled={true}> </button>
           }
           { stage < 3 ?
-              <button className="increase" onClick={ stage===2 ? this.handleCart:this.increase}> {steps[stage+1]}  &#62;</button>
-              : <button className="empty" > Added to Cart! </button>
+              <button
+                className={["increase", stage===0? (box===null)? "disalbed":null: (capacity!==0)? "disalbed":false].join(" ")}
+                onClick={ stage===2 ? this.handleCart:this.increase}
+                disabled={ stage===0? (box===null)?true:false : (capacity!==0)? true:false}
+              >
+                {steps[stage+1]}  &#62;
+              </button>
+              : <button className="empty" disabled={true}> </button>
           }
-
         </div>
 
         <div className="options">
@@ -297,6 +347,7 @@ class Order extends Component {
               />
             )) : null
           }
+          { stage === 3 && <div className="checkout" onClick={this.refresh}> <p> Start Fresh</p></div>}
         </div>
 
         {this.state.showPopup ?
@@ -314,5 +365,12 @@ class Order extends Component {
     );
   }
 }
+
+Order.propTypes = {
+  data : PropTypes.array.isRequired,
+  added : PropTypes.bool.isRequired,
+  directBack : PropTypes.func.isRequired,
+  startFresh : PropTypes.func.isRequired
+};
 
 export default Order;

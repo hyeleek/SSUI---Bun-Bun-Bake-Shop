@@ -8,7 +8,7 @@ class Steps extends React.Component {
   }
 
   render() {
-    const { titles, stage, click }  = this.props;
+    const { titles, stage, click, box, capacity }  = this.props;
     return (
       <div className="steps">
         {titles.map( (title, index) =>
@@ -17,6 +17,12 @@ class Steps extends React.Component {
             index={index}
             progress={stage}
             click={click}
+            enabled={
+              index < stage ? true:
+              index !== stage+1?false:
+              stage===0? (box===null)?false:true :
+               (capacity!==0)? false:true
+            }
           />
         )}
       </div>
@@ -27,7 +33,9 @@ class Steps extends React.Component {
 Steps.propTypes = {
   titles: PropTypes.array.isRequired,
   stage : PropTypes.number.isRequired,
-  click : PropTypes.func.isRequired
+  click : PropTypes.func.isRequired,
+  box : PropTypes.number.isRequired,
+  capacity : PropTypes.number.isRequired
 };
 
 export default Steps;
