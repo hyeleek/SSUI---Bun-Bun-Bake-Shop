@@ -1,23 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fddd6df9462e071f689ae7fb456b2fa6",
+    "revision": "073d6e827951feabbd5d9a6907783266",
     "url": "/SSUI---Bun-Bun-Bake-Shop/index.html"
   },
   {
-    "revision": "cdbb4f0433c1f85dc57d",
-    "url": "/SSUI---Bun-Bun-Bake-Shop/static/css/main.b1c7cff0.chunk.css"
+    "revision": "8a4266ddc721e0cfba59",
+    "url": "/SSUI---Bun-Bun-Bake-Shop/static/css/main.7490aa46.chunk.css"
   },
   {
-    "revision": "9ae9fbce7392dae79241",
-    "url": "/SSUI---Bun-Bun-Bake-Shop/static/js/2.d4fe38c0.chunk.js"
+    "revision": "9c138efcca15edb712fc",
+    "url": "/SSUI---Bun-Bun-Bake-Shop/static/js/2.4ff1708a.chunk.js"
   },
   {
-    "revision": "cdbb4f0433c1f85dc57d",
-    "url": "/SSUI---Bun-Bun-Bake-Shop/static/js/main.81e43472.chunk.js"
+    "revision": "8a4266ddc721e0cfba59",
+    "url": "/SSUI---Bun-Bun-Bake-Shop/static/js/main.35c873a2.chunk.js"
   },
   {
     "revision": "cd59b981aa8dc66c76ba",
     "url": "/SSUI---Bun-Bun-Bake-Shop/static/js/runtime-main.95658096.js"
+  },
+  {
+    "revision": "957eb99d21f8a1ca8cc10a79c136a804",
+    "url": "/SSUI---Bun-Bun-Bake-Shop/static/media/about.957eb99d.jpg"
   },
   {
     "revision": "bc01d3912722cf4c8120bc0abc364aef",
@@ -54,6 +58,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f9048dba46e2416b97773589e8ed1d7f",
     "url": "/SSUI---Bun-Bun-Bake-Shop/static/media/cinnamon_walnut.f9048dba.png"
+  },
+  {
+    "revision": "567142e8c1cb5cfa1e1b79bf0f6f5289",
+    "url": "/SSUI---Bun-Bun-Bake-Shop/static/media/contact.567142e8.jpg"
   },
   {
     "revision": "37baa3a93e2cc8fbddd49c97058b2c16",
