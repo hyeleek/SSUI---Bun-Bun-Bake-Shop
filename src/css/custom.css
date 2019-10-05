@@ -383,15 +383,22 @@ ORDER PAGE
   justify-content: space-between;
   align-self: center;
 }
-.buttons > button {
+.buttons > .button {
   width : 100px;
   height : 30px;
   border-radius: 5px;
   border-color: white;
   font-family: inherit;
-  font-size : 12px;
+  font-size : 14px;
   font-weight : 300;
   color : white;
+  display : flex;
+}
+
+.buttons > .button >p {
+  flex : 1;
+  align-self: center;
+  text-align: center;
 }
 .buttons > .empty {
   background-color: var(--white);
@@ -417,6 +424,7 @@ ORDER PAGE
 .buttons > .disalbed:hover {
   box-shadow : none;
 }
+
 .steps {
   display: flex;
   width : 90%;

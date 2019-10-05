@@ -156,12 +156,10 @@ class Order extends Component {
   }
 
   increase() {
-    console.log("increase!");
     const { stage } = this.state;
     this.setState({
       stage : value_limit(stage + 1, 0, 3)
     });
-    console.log("to " + this.state.stage);
   }
 
   boxClick(newIndex){
@@ -292,20 +290,20 @@ class Order extends Component {
 
         <div className="buttons">
           { (stage > 0 && stage<3) ?
-              <button className="decrease" onClick= {this.decrease} >
-                &#60; {steps[stage-1]}
-              </button>
-              : <button className="empty" disabled={true}> </button>
+              <div className={["decrease", "button"].join(" ")} onClick= {this.decrease} >
+                <p> &#60; {steps[stage-1]} </p>
+              </div>
+              : <div className="empty" disabled={true}> </div>
           }
           { stage < 3 ?
-              <button
-                className={["increase", stage===0? (box===null)? "disalbed":null: (capacity!==0)? "disalbed":false].join(" ")}
+              <div
+                className={["button", "increase", stage===0? (box===null)? "disalbed":null: (capacity!==0)? "disalbed":false].join(" ")}
                 onClick={ stage===2 ? this.handleCart:this.increase}
                 disabled={ stage===0? (box===null)?true:false : (capacity!==0)? true:false}
               >
-                {steps[stage+1]}  &#62;
-              </button>
-              : <button className="empty" disabled={true}> </button>
+                <p>{steps[stage+1]}  &#62;</p>
+              </div>
+              : <div className="empty" disabled={true}> </div>
           }
         </div>
 
