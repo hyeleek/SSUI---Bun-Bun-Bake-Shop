@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4071efa2ddc27b9b0e78c7041aa22140",
+    "revision": "187beb598633741031737a99bd0386fe",
     "url": "/SSUI---Bun-Bun-Bake-Shop/index.html"
   },
   {
-    "revision": "07ccc332bb360ee3b535",
-    "url": "/SSUI---Bun-Bun-Bake-Shop/static/css/main.0e7972a4.chunk.css"
+    "revision": "0d85b2690d33ca45e6b3",
+    "url": "/SSUI---Bun-Bun-Bake-Shop/static/css/main.938011b3.chunk.css"
   },
   {
     "revision": "9c138efcca15edb712fc",
     "url": "/SSUI---Bun-Bun-Bake-Shop/static/js/2.4ff1708a.chunk.js"
   },
   {
-    "revision": "07ccc332bb360ee3b535",
-    "url": "/SSUI---Bun-Bun-Bake-Shop/static/js/main.b4df4bf6.chunk.js"
+    "revision": "0d85b2690d33ca45e6b3",
+    "url": "/SSUI---Bun-Bun-Bake-Shop/static/js/main.37b2f385.chunk.js"
   },
   {
     "revision": "cd59b981aa8dc66c76ba",
