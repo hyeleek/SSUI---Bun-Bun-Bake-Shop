@@ -60,7 +60,7 @@ class Detail extends React.Component {
             <p>
               Serving Size : 1 roll (44g) <br/>
             Amount Per Serving :  As Served<br/>
-              <hr/>
+          <br/>
               Calories<br />
               Total Fat 4.5g<br />
               Cholesterol 0mg<br />

@@ -8,7 +8,7 @@ class Products extends Component {
     return (
       <div className="product-container">
         {buns.map(bun => (
-          <Bun title={bun}/>
+          <Bun key={bun} title={bun}/>
         ))}
       </div>
     );

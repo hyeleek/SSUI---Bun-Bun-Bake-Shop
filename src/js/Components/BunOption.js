@@ -31,6 +31,7 @@ class BunOption extends Component {
             <div id={"num-buttons"}>
               {nums.map( (num, index)  => (
                 <button
+                  key={index}
                   className={["num", index===option ? "selected":null].join(' ')}
                   onClick={()=>this.select(index)}
                 > {num} </button>
@@ -45,7 +46,7 @@ class BunOption extends Component {
 }
 
 BunOption.propTypes = {
-  imgSrc: PropTypes.object.isRequired,
+  imgSrc: PropTypes.string.isRequired,
   title : PropTypes.string.isRequired,
   name : PropTypes.string.isRequired,
   price : PropTypes.number.isRequired,

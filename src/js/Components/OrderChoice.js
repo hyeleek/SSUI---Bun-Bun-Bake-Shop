@@ -90,6 +90,7 @@ class OrderChoice extends Component {
         <div className={boxClassName(boxKey)}>
           { items.map( (bun, index) => (
               <img
+                key={index}
                 className={[bunClassName(boxKey)].join(" ")}
                 src={buns[bun]["image"]}
                 onClick={()=>deleteFromBox(bun, index)}

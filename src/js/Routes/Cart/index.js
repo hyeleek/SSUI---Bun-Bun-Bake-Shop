@@ -73,7 +73,7 @@ const Total = ({items}) => {
 const Items = ({items, click}) => (
   <div className="boxes-container">
     { items.map( (item, key) => (
-        <div className="box">
+        <div className="box" key={key}>
           <div className="delete" onClick={()=>click(key)}> <p>x</p> </div>
           <div className="left">
             <img src={ boxes[item["box"]]["image"]}/>
@@ -82,7 +82,7 @@ const Items = ({items, click}) => (
           <div className="right">
             {
               Object.entries(item["choices"]).map( ([key, value]) => (
-                <div className="info">
+                <div className="info"  key={key}>
                   <p className="type"> {buns[key]["title"]}  </p>
                   <p className="price"> $ {buns[key]["price"].toFixed(2)} </p>
                   <p className="times"> x </p>
@@ -147,7 +147,7 @@ class Cart extends Component {
         <div className="buttons">
           <Link to="/Order" style={{ textDecoration: 'none'}}> CONTINUE SHOPPING </Link>
           { data!==null &&
-            <Link onClick={this.checkout} style={{ textDecoration: 'none'}} id="order-button"> CHECKOUT </Link>
+            <Link to={"#"} onClick={this.checkout} style={{ textDecoration: 'none'}} id="order-button"> CHECKOUT </Link>
           }
         </div>
         { data!==null && <Items  items={data} click={this.handleDelete}/> }
@@ -161,7 +161,7 @@ class Cart extends Component {
 }
 
 Cart.propTypes = {
-  data : PropTypes.array.isRequired,
+  data : PropTypes.array,
   updateCart : PropTypes.func.isRequired
 };
 

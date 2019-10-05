@@ -10,7 +10,7 @@ const GlazeOption = ({ index, imgSrc, click, selected }) => (
 );
 
 GlazeOption.propTypes = {
-  index : PropTypes.number.isRequired,
+  index : PropTypes.string.isRequired,
   imgSrc: PropTypes.any.isRequired,
   click : PropTypes.func.isRequired,
   selected : PropTypes.bool.isRequired

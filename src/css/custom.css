@@ -167,6 +167,10 @@ HOME
   text-align: right;
   font-weight: 400;
 }
+
+.intro > a:hover{
+  font-weight: 700;
+}
 .home-image {
   padding-right: 50px;
   width : 400px;
@@ -187,6 +191,9 @@ HOME
   box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.2);
   color: var(--white);
   align-self: flex-end;
+}
+.order-button > a:hover{
+  background-color: var(--coral);
 }
 
 

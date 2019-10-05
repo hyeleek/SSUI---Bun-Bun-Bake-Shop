@@ -13,6 +13,7 @@ class Steps extends React.Component {
       <div className="steps">
         {titles.map( (title, index) =>
           <Step
+            key={title}
             title={title}
             index={index}
             progress={stage}
@@ -34,8 +35,8 @@ Steps.propTypes = {
   titles: PropTypes.array.isRequired,
   stage : PropTypes.number.isRequired,
   click : PropTypes.func.isRequired,
-  box : PropTypes.number.isRequired,
-  capacity : PropTypes.number.isRequired
+  box : PropTypes.number,
+  capacity : PropTypes.number
 };
 
 export default Steps;

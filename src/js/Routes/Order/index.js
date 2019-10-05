@@ -313,6 +313,7 @@ class Order extends Component {
           { stage === 0 ?
             Object.entries(boxes).map( ([key, value]) => (
             <BoxOption
+              key={value["key"]}
               index={value["key"]}
               number={value["size"]}
               imgSrc={value["image"]}
@@ -325,6 +326,7 @@ class Order extends Component {
             <div className="buns-container">
               {Object.entries(buns).map( ([key, value]) => (
                 <BunOption
+                  key={value["title"]}
                   imgSrc={value["image"]}
                   title={value["title"]}
                   name={key}
@@ -340,6 +342,7 @@ class Order extends Component {
           { stage === 2 ?
             Object.entries(glazes).map( ([key, value]) => (
               <GlazeOption
+                key={key}
                 index={key}
                 imgSrc={value["image"]}
                 click={this.glazeClick}
@@ -367,7 +370,7 @@ class Order extends Component {
 }
 
 Order.propTypes = {
-  data : PropTypes.array.isRequired,
+  data : PropTypes.array,
   added : PropTypes.bool.isRequired,
   directBack : PropTypes.func.isRequired,
   startFresh : PropTypes.func.isRequired

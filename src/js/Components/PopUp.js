@@ -52,6 +52,7 @@ class PopUp extends Component {
                 <div id={"num-buttons"}>
                   {nums.map( (num, index)  => (
                     <button
+                      key={index}
                       className={["num", index===option ? "selected":null].join(' ')}
                       onClick={()=>this.select(index)}
                     > {num} </button>
@@ -81,7 +82,7 @@ class PopUp extends Component {
                 <p>
                   Serving Size : 1 roll (44g) <br/>
                 Amount Per Serving :  As Served<br/>
-                  <hr/>
+                <br/>
                   Calories<br />
                   Total Fat 4.5g<br />
                   Cholesterol 0mg<br />
@@ -104,7 +105,7 @@ class PopUp extends Component {
 }
 
 PopUp.propTypes = {
-  imgSrc: PropTypes.object.isRequired,
+  imgSrc: PropTypes.string.isRequired,
   title : PropTypes.string.isRequired,
   name : PropTypes.string.isRequired,
   price : PropTypes.number.isRequired,
