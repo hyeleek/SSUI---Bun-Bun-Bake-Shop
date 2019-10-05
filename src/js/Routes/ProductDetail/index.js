@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 import original from "../../../assets/cinnamon.png";
 import gf from "../../../assets/cinnamon.png";
@@ -10,21 +10,33 @@ import pumpkin from "../../../assets/cinnamon_pumpkin.png";
 import walnut from "../../../assets/cinnamon_walnut.png";
 
 const dict = {
-  "original": [original, "Original"],
-  "gluten free": [gf, "Original Gluten Free"],
-  "blackberry" : [blackberry, "Blackberry"],
-  "pecan" : [pecan, "Caramel Pecan"],
-  "pumpkin" : [pumpkin,"Pumpkin Spice"],
-  "walnut" : [walnut, "Walnut"]
+  "original": [
+    original, "Original"
+  ],
+  "gluten free": [
+    gf, "Original Gluten Free"
+  ],
+  "blackberry": [
+    blackberry, "Blackberry"
+  ],
+  "pecan": [
+    pecan, "Caramel Pecan"
+  ],
+  "pumpkin": [
+    pumpkin, "Pumpkin Spice"
+  ],
+  "walnut": [walnut, "Walnut"]
 };
 
-
+/*=====================
+PRODUCT DETAIL PAGE
+=====================*/
 class Detail extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      title : null
+      title: null
     };
   };
 
@@ -33,14 +45,19 @@ class Detail extends React.Component {
   }
 
   render() {
-    const { title } = this.state;
-    return (
-      <div className="product-detail">
+    const {title} = this.state;
+    return (<div className="product-detail">
       <div className="product-detail-container">
 
         <div className="product-detail-column">
-          <p className="title">{title==undefined ? dict["original"][1] : dict[title][1]}</p>
-          <img src={title==undefined ? dict["original"][0] : dict[title][0]}/>
+          <p className="title">{
+              title == undefined
+                ? dict["original"][1]
+                : dict[title][1]
+            }</p>
+          <img src={title == undefined
+              ? dict["original"][0]
+              : dict[title][0]}/>
 
         </div>
 
@@ -58,15 +75,16 @@ class Detail extends React.Component {
           <div className="section">
             <h3>Nutrition Facts</h3>
             <p>
-              Serving Size : 1 roll (44g) <br/>
-            Amount Per Serving :  As Served<br/>
-          <br/>
-              Calories<br />
-              Total Fat 4.5g<br />
-              Cholesterol 0mg<br />
-              Sodium 340mg<br />
-              Total<br />
-              Carbohydrate 24g<br />
+              Serving Size : 1 roll (44g)
+              <br/>
+              Amount Per Serving : As Served<br/>
+              <br/>
+              Calories<br/>
+              Total Fat 4.5g<br/>
+              Cholesterol 0mg<br/>
+              Sodium 340mg<br/>
+              Total<br/>
+              Carbohydrate 24g<br/>
               Protein 2g
             </p>
           </div>
@@ -74,11 +92,18 @@ class Detail extends React.Component {
 
       </div>
       <div className="product-detail-buttons">
-        <Link to="/Products" style={{ textDecoration: 'none'}}> BACK </Link>
-        <Link to="/Order" style={{ textDecoration: 'none'}} id="order-button"> ORDER NOW </Link>
+        <Link to="/Products" style={{
+            textDecoration: 'none'
+          }}>
+          BACK
+        </Link>
+        <Link to="/Order" style={{
+            textDecoration: 'none'
+          }} id="order-button">
+          ORDER NOW
+        </Link>
       </div>
-    </div>
-    );
+    </div>);
   }
 }
 

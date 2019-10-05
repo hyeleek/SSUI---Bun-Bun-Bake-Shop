@@ -18,12 +18,15 @@ var dict = {
   "walnut" : [walnut, "Walnut"]
 };
 
+/*=====================
+Component : Bun 
+=====================*/
 const Bun = ({ title }) => (
   <Link to={{
     pathname: `/Detail/${title}`,
     title : title
   }} style={{ textDecoration: 'none'}} className="item">
-      <img src={dict[title][0]}/>
+      <img alt={"product"}src={dict[title][0]}/>
       <p> {dict[title][1]} </p>
   </Link>
 );

@@ -424,7 +424,6 @@ ORDER PAGE
 .buttons > .disalbed:hover {
   box-shadow : none;
 }
-
 .steps {
   display: flex;
   width : 90%;
