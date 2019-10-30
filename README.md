@@ -14,7 +14,7 @@ Created by [Hailey Kim](http://hyeleekim.com) as [PUI/SSUI](https://hcii.cmu.edu
 - Cart Interaction : Deleting items in the cart, Checking out to clear the cart 
 - More than one detail pages for the product
 
-### Iteractions
+### Iterations
 After 3 iterations of paper prototyping,    high-fidelity clickable prototype designed has been designed with Adobe XD and prototyped in inVision.
 Interactive Prototype can be tested [here](https://hailey455812.invisionapp.com/public/share/BZWTRZ3VX).    
 Screen recording of the interactive prototype can be viewed [here](https://vimeo.com/361695190).    
